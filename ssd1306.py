@@ -3,7 +3,6 @@
 import time
 import framebuf
 
-
 # register definitions
 SET_CONTRAST        = const(0x81)
 SET_ENTIRE_ON       = const(0xa4)
@@ -162,7 +161,7 @@ class SSD1306_SPI(SSD1306):
 
     def poweron(self):
         self.res.high()
-        time.sleep_ms(1)
+        time.sleep(.001)
         self.res.low()
-        time.sleep_ms(10)
+        time.sleep(.01)
         self.res.high()
